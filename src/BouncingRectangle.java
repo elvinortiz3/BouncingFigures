@@ -7,8 +7,8 @@ import java.awt.Rectangle;
  * BouncingRectangle - A class that represents a rectangle that can bounce
  * 
  */
-public class BouncingRectangle extends BouncingFigure {
-	
+public class BouncingRectangle {
+
 	//Sides of object
 	private int height;
 	private int width;
@@ -24,7 +24,6 @@ public class BouncingRectangle extends BouncingFigure {
 	 * @param speed - speed of movement
 	 */
 	BouncingRectangle(int xLeft, int yTop, int height, int width, double trajectory, int speed) {
-		//Understand this constructor to answer Q2
 		setXLeft(xLeft);
 		setYTop(yTop);
 		setTrajectory(trajectory);
@@ -55,11 +54,9 @@ public class BouncingRectangle extends BouncingFigure {
 	 * @param screenLimit - The width of the window
 	 */
 	public boolean rightBorderCollision(int screenLimit){
-		if(getXLeft()+this.width > screenLimit)
-			return true;
-		return false;
+		return true; //Dummy Return
 	}
-	
+
 	/**
 	 * rightBorderCollision - verifies if the rectangle object is touching the left frame border
 	 */
@@ -73,9 +70,7 @@ public class BouncingRectangle extends BouncingFigure {
 	 * rightBorderCollision - verifies if the rectangle object is touching the top frame border
 	 */
 	public boolean upperBorderCollision(){
-		if(getYTop() < 0)
-			return true;
-		return false;
+		return true; //Dummy Return
 	}
 
 	/**

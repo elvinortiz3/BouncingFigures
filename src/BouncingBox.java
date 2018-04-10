@@ -27,22 +27,7 @@ public class BouncingBox extends JComponent {
 		for (BouncingFigure f2 : figures) {
 
 			if (indexC != fIndex) {
-				/*//For left-right Collision
-				if ((fX == f2.getXLeft()) && ((f2.getYTop() > fY) && (f2.getYTop() < (fY+f.getHeight()))) ){
-					return true;
-				}
-				//For right-left Collision
-				if ((fX+f.getWidth() == f2.getXLeft()) && ((f2.getYTop() > fY) && (f2.getYTop() < (fY+f.getHeight()))) ){
-					return true;
-				}
-				//For Top-Bottom Collision
-				if ((fY == f2.getYTop()) && ((f2.getXLeft() > fX) && (f2.getXLeft() < (fX+f.getWidth()))) ){
-					return true;
-				}
-				//For Bottom-Top Collision
-				if ((fY+f.getHeight() == f2.getYTop()) && ((f2.getXLeft() > fX) && (f2.getXLeft() < (fX+f.getWidth()))) ){
-					return true;
-				}*/
+			//If there is a collision 
 				if(((f2.getXLeft() >= fX) && f2.getXLeft() <= fX + f.getWidth()) && ((f2.getYTop() >= fY) && (f2.getYTop() <= fY+f.getHeight()))) {
 					return true;
 				}
@@ -76,62 +61,6 @@ public class BouncingBox extends JComponent {
            
         }
     
-			
-		
-		/*for (BouncingFigure f : figures) {
-			f.draw(g);
-			
-			if(onCollision(f)) {
-				f.setTrajectory(-f.getTrajectory());
-			}
-			
-			if (f.rightBorderCollision(600-1)) {
-				double cAngle = f.getTrajectory();
-				double adjustedCAngle = cAngle % 360;
-				if (adjustedCAngle >= 90) {
-					double newAngle = adjustedCAngle + (90 - adjustedCAngle)*2;
-					f.setTrajectory(newAngle % 360);
-				} else {
-					double newAngle = adjustedCAngle - (adjustedCAngle - 270)*2;
-					f.setTrajectory(newAngle % 360);
-				}
-				
-			}else if (f.leftBorderCollision()) {
-				double cAngle = f.getTrajectory();
-				double adjustedCAngle = cAngle % 360;
-				if (adjustedCAngle >= 270) {
-					double newAngle = adjustedCAngle + (270 - adjustedCAngle)*2;
-					f.setTrajectory(newAngle % 360);
-				} else {
-					double newAngle = adjustedCAngle - (adjustedCAngle - 90)*2;
-					f.setTrajectory(newAngle);
-				}
-				
-			}else if (f.lowerBorderCollision(620)) {
-				double cAngle = f.getTrajectory();
-				double adjustedCAngle = cAngle % 360;
-				if (adjustedCAngle >= 360) {
-					double newAngle = adjustedCAngle + (360 - adjustedCAngle)*2;
-					f.setTrajectory(newAngle % 360);
-				} else {
-					double newAngle = adjustedCAngle - (adjustedCAngle - 180)*2;
-					f.setTrajectory(newAngle % 360);
-				}
-				
-			}else if (f.upperBorderCollision()) {
-				double cAngle = f.getTrajectory();
-				double adjustedCAngle = cAngle % 360;
-				if (adjustedCAngle >= 180) {
-					double newAngle = adjustedCAngle + (180 - adjustedCAngle)*2;
-					f.setTrajectory(newAngle % 360);
-				} else {
-					double newAngle = adjustedCAngle - (adjustedCAngle - 0)*2;
-					f.setTrajectory(newAngle % 360);
-				}
-			}
-			
-			
-			f.move();
-		}*/
+
 	}
 }

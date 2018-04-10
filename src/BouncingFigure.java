@@ -2,10 +2,10 @@ import java.awt.Graphics;
 
 import javax.swing.JComponent;
 
-	/**
-	 * A class that represents a figure that can bounce
-	 * Note: This class doesn't have a constructor and it has abstract methods
-	 */
+/**
+ * A class that represents a figure that can bounce
+ * Note: This class doesn't have a constructor and it has abstract methods
+ */
 public abstract class BouncingFigure {
 
 	// Variables to contain some of the figure's properties
@@ -58,7 +58,7 @@ public abstract class BouncingFigure {
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
-	
+
 	public void setHeight(int h) {
 		this.height = h;
 	}
@@ -83,35 +83,20 @@ public abstract class BouncingFigure {
 	 */
 	public void moveAtAngle(double angle,int pixelsPerSec){
 
-		//Understand this method to answer Q1
-		
 		// Divide speed by 10 because frame is repainted every 0.1 sec
 		int magnitude = Math.max(pixelsPerSec / 10,1);
 
-		// Compute horizontal and vertical components of linear translation
-		// 90 degrees trajectory -> move straight up. 
-		// 0 degrees trajectory -> move horizontally to the right
-		int xVector= (int) (magnitude*Math.cos(Math.toRadians(angle)));
-		int yVector= -(int) (magnitude*Math.sin(Math.toRadians(angle))); 
-
-
-		//current values, for debugging purposes
-		System.out.println("Current (x,y) position and vectors values to be added or substracted");
-		System.out.println("xVector=" +xVector);
-		System.out.println("yVector=" +yVector);
-		System.out.println("xPosition=" + this.xLeft);
-		System.out.println("yPosition=" + this.yTop);
+		//Q1:
+		int xVector= 0;
+		int yVector= 0; 
 
 		//moving to the new coordinates by addition
-		this.xLeft=this.xLeft+xVector;
-		this.yTop=this.yTop+yVector;
+		this.xLeft=0;
+		this.yTop=0;
 
-		//new positions on the (x,y) plane for debugging purposes
-		System.out.println("New (x,y) position with vectors values updated");
-		System.out.println("xPosition=" + this.xLeft);
-		System.out.println("yPosition=" + this.yTop);
+
 	}
-	
+
 	// Abstract methods to be implemented by subclasses (Do Not Modify!)
 	public abstract void draw(Graphics g);
 	public abstract boolean rightBorderCollision(int screenLimit);
